@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'assemblage de type broche</title>
+    <style>
+        /* Appliquer un style global au body pour centrer tous les éléments */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Aligner les éléments au début de la page */
+            min-height: 100vh; /* Assure que le body couvre au moins la hauteur de la fenêtre */
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow-y: auto; /* Permettre le défilement vertical */
+        }
+
+        /* Ajout d'un pseudo-élément pour gérer l'image de fond sur la bande gauche */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px; /* Largeur de la bande gauche, peut être ajustée */
+            height: 100%;
+            background-image: url('fond.jpg'); /* Remplace 'fond.jpg' par ton image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Opacité de l'image de fond */
+            z-index: -1; /* Pour que le contenu soit au-dessus de l'image */
+        }
+
+        /* Style pour centrer les éléments avec un peu d'espacement */
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            display: block;
+            margin-bottom: 30px;
+            border: 2px solid #ccc; /* Petite bordure pour mieux distinguer les PDFs */
+        }
+
+        /* Spécifie des tailles maximales pour que tout soit bien visible */
+        iframe {
+            max-width: 100%;
+            height: 500px; /* Hauteur des cadres PDF */
+        }
+    </style>
+</head>
+<body>
+    <!-- Titre du site -->
+    <h1>L'assemblage de type broche</h1>
+
+    <!-- Intégration du premier PDF -->
+    <h2>Impact de la qualité du perçage sur le comportement cyclique</h2>
+    <iframe src="pdf1.pdf" width="600" height="500"></iframe>
+
+    <!-- Intégration du deuxième PDF -->
+    <h2>Impact de l'humidité du bois sur le comportement cyclique</h2>
+    <iframe src="pdf2.pdf" width="600" height="500"></iframe>
+
+    <!-- Intégration du troisième PDF -->
+    <h2>Modèle dynamique / cyclique de l'assemblage</h2>
+    <iframe src="pdf3.pdf" width="600" height="500"></iframe>
+
+</body>
+</html>
